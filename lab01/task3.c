@@ -1,32 +1,30 @@
-#include <stdio.h>
+x#include <stdio.h>
+#include <math.h>
 
 int main(void) {
     double m, v;
+    double E_k, p;
 
-    printf("=== Розрахунок кінетичної енергії та імпульсу (Варіант 18) ===\n");
-    printf("Введіть масу тіла m (кг): ");
-    if (scanf("%lf", &m) != 1) {
-        printf("Помилка: введено некоректне числове значення для маси.\n");
+    printf("=== Engineering Calculation (Task 3) ===\n");
+
+    printf("Enter mass m (kg): ");
+    if (scanf("%lf", &m) != 1 || m < 0) {
+        printf("Error: Invalid mass value!\n");
         return 1;
     }
 
-    printf("Введіть швидкість v (м/с): ");
-    if (scanf("%lf", &v) != 1) {
-        printf("Помилка: введено некоректне числове значення для швидкості.\n");
+    printf("Enter velocity v (m/s): ");
+    if (scanf("%lf", &v) != 1 || v < 0) {
+        printf("Error: Invalid velocity value!\n");
         return 1;
     }
 
-    if (m <= 0.0) {
-        printf("Помилка: маса має бути строго більшою за нуль (m > 0).\n");
-        return 1;
-    }
+    E_k = (m * v * v) / 2.0;
+    p = m * v;
 
-    double E_k = (m * v * v) / 2.0;
-    double p = m * v;
-
-    printf("\n--- Результати розрахунку ---\n");
-    printf("Кінетична енергія (E_k): %.2f Дж\n", E_k);
-    printf("Імпульс тіла (p):         %.2f кг*м/с\n", p);
+    printf("\n--- Calculation Results ---\n");
+    printf("Kinetic energy (E_k): %.2f J\n", E_k);
+    printf("Momentum (p):         %.2f kg*m/s\n", p);
 
     return 0;
 }
