@@ -4,7 +4,6 @@
 
 int main(void) {
     double x_start, x_end, dx;
-
     printf("=== Task 1: Tabulation (Variant 3) ===\n");
     printf("Enter X_start, X_end, dX: ");
     
@@ -12,7 +11,6 @@ int main(void) {
         fprintf(stderr, "Error: invalid input format.\n");
         return 1;
     }
-
     if (x_start >= x_end || dx <= 0.0) {
         fprintf(stderr, "Error: X_start must be < X_end and dX > 0.\n");
         return 1;

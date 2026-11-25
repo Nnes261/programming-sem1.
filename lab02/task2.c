@@ -6,7 +6,6 @@
 
 int main(void) {
     double x, eps;
-
     printf("=== Task 2: Approximating cos(X) (Variant 3) ===\n");
     printf("Enter X and eps: ");
     
@@ -14,7 +13,6 @@ int main(void) {
         fprintf(stderr, "Error: invalid input.\n");
         return 1;
     }
-
     if (eps <= 0.0) {
         fprintf(stderr, "Error: eps must be > 0.\n");
         return 1;
@@ -28,7 +26,6 @@ int main(void) {
 
     while (fabs(term) >= eps) {
         n++;
-
         if (n > MAX_ITERATIONS) {
             printf("\nWARNING: Max iterations reached (%d).\n", MAX_ITERATIONS);
             break;
